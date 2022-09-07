@@ -1,9 +1,12 @@
+// CSS
+import Navbar from '../../components/Navbar'
 import './Home.css'
 
-const Home = () => {
+const Home = ({ children }) => {
     return (
         <div className='home'>
-            <h1>Home</h1>
+            <Navbar />
+            {children}
         </div>
     )
 }
