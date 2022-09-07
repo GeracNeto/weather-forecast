@@ -3,7 +3,7 @@ import './Form.css'
 
 const Form = ({ formName, name, email, password, confirmPassword }) => {
     return (
-        <form className="register-form">
+        <form>
             <h1>{formName}<span>.</span></h1>
             {name && (
                 <label>
