@@ -1,5 +1,10 @@
+// Libs
 import { Link } from 'react-router-dom'
+
+// CSS
 import './Navbar.css'
+
+// Logo
 import logo from '../assets/images/logo.png'
 
 const Navbar = () => {

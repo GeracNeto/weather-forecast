@@ -5,13 +5,11 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 // Pages
-import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 
 // Components
-
 
 function App() {
 
