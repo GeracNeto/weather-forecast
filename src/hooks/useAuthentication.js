@@ -49,7 +49,7 @@ export const useAuthentication = () => {
             if (error.message.includes("Password")) {
                 systemErrorMessage = "Password shall be at least 6 characters"
             }
-            else if(error.message.includes('email')){
+            else if (error.message.includes('email')) {
                 systemErrorMessage = 'Invalid e-mail'
             }
             else {
@@ -63,11 +63,18 @@ export const useAuthentication = () => {
 
     }
 
+    // Logout - sign out
+    const logout = () => {
+        checkIfIsCancelled()
+
+        signOut(auth)
+    }
+
     // cleanUp - deal with memory leak
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
 
-    return { auth, createUser, error, loading }
+    return { auth, createUser, error, loading, logout }
 
 }
