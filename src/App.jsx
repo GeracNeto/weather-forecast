@@ -31,10 +31,8 @@ function App() {
     })
   }, [auth])
 
-  console.log(user)
-
   const loadingUser = user === undefined
-  
+
   if (loadingUser) {
     return <p>Loading...</p>
   }
@@ -42,15 +40,15 @@ function App() {
   return (
     <div className="App">
       <AuthProvider value={{ user }}>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={!user ? <Login /> : <Navigate to='/weather' />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/register' element={!user ? <Register /> : <Navigate to='/weather' />} />
-            <Route path='/login' element={!user ? <Login /> : <Navigate to='/weather' />} />
-            <Route path='/weather' element={user ? <Weather /> : <Navigate to='/login' />} />
-          </Routes>
-        </BrowserRouter>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={!user ? <Login /> : <Navigate to='/weather' />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/register' element={!user ? <Register /> : <Navigate to='/weather' />} />
+              <Route path='/login' element={!user ? <Login /> : <Navigate to='/weather' />} />
+              <Route path='/weather' element={user ? <Weather /> : <Navigate to='/login' />} />
+            </Routes>
+          </BrowserRouter>
       </AuthProvider>
     </div>
   )
