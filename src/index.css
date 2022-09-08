@@ -13,10 +13,13 @@ nav button {
     text-decoration: none;
 
     border: none;
+    background-color: transparent;
 
     transition: 0.4s;
 
     cursor: pointer;
+
+    font-size: 1.1em;
 }
 
 a:hover,
@@ -42,7 +45,7 @@ form h1 {
 }
 
 form span {
-    color: rgb(0, 68, 255);
+    color: rgb(11, 158, 243);
 }
 
 label {
@@ -72,7 +75,7 @@ input {
 /* buttns styles */
 
 .btn {
-    background-color: rgb(0, 68, 255);
+    background-color: rgb(11, 158, 243);
 
     color: #fff;
     text-align: center;
