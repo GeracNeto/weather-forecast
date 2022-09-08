@@ -33,6 +33,12 @@ function App() {
 
   console.log(user)
 
+  const loadingUser = user === undefined
+  
+  if (loadingUser) {
+    return <p>Loading...</p>
+  }
+
   return (
     <div className="App">
       <AuthProvider value={{ user }}>
