@@ -10,8 +10,6 @@ const Search = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        navigate('/')
-
         // fazer GET dos dados e salvar em context
     }
 

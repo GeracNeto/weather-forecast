@@ -10,7 +10,7 @@
     background: none;
 }
 
-.search button:active{
+.search img:active{
 
     transform: scale(1);
     transform: scale(0.5);
