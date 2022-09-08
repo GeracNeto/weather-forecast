@@ -6,8 +6,10 @@
     background-position: center;
 
     height: 100vh;
-    text-align: center;
+}
 
+#day{
+    text-align: center;
 }
 
 .data {

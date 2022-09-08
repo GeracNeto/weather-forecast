@@ -2,12 +2,17 @@ import Navbar from '../../components/Navbar'
 import './Weather.css'
 
 import teste from '../../assets/images/rainy-day.png'
+import { useAuthValue } from '../../context/AuthContext'
+import { useEffect } from 'react'
 
 const Weather = () => {
+
+    // get firebase here
+
     return (
         <div className='weather'>
             <Navbar />
-            <h3>
+            <h3 id='day'>
                 Thu, April 28
             </h3>
             <div className='data'>
