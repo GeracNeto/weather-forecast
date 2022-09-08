@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useAddAPIKey } from "../../hooks/useAddAPIKey"
 import { useAuthentication } from "../../hooks/useAuthentication"
 import Home from "../Home/Home"
 
 const Register = () => {
 
-    const {createUser, error: authError, loading} = useAuthentication()
+    const navigate = useNavigate()
+
+    const { createUser, error: authError, loading } = useAuthentication()
+    const { addAPIKey } = useAddAPIKey()
 
     const [displayName, setDisplayName] = useState('')
+    const [apiKey, setApiKey] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setCofirmPassword] = useState('')
@@ -33,10 +39,15 @@ const Register = () => {
             password
         }
 
+        // Creates user 
         const res = await createUser(user)
-        console.log(res)
+
+        // Update firebase db with wmail and API key
+        const addApiKeyFirebase = await addAPIKey(email, apiKey)
+
+        navigate('/') // arrumar isso
     }
-    
+
     // Updates error always authError updates
     useEffect(() => {
         if (authError) {
@@ -55,6 +66,14 @@ const Register = () => {
                         type="text"
                         onChange={e => setDisplayName(e.target.value)}
                         value={displayName}
+                        required />
+                </label>
+                <label>
+                    API Key:
+                    <input
+                        type="text"
+                        onChange={e => setApiKey(e.target.value)}
+                        value={apiKey}
                         required />
                 </label>
                 <label>
