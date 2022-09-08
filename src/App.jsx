@@ -2,12 +2,13 @@
 import './App.css'
 
 // Libs
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 // Pages
 import About from './pages/About/About'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
+import Weather from './pages/Weather/Weather'
 
 // Firebase
 import { onAuthStateChanged } from 'firebase/auth'
@@ -18,8 +19,6 @@ import { AuthProvider } from './context/AuthContext'
 // Hooks
 import { useAuthentication } from './hooks/useAuthentication'
 import { useEffect, useState } from 'react'
-
-
 
 function App() {
 
@@ -39,10 +38,11 @@ function App() {
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Register />} /> {/* Fazer verificação se o usuario esta logado para não envia-lo para a page Register */}
+            <Route path='/' element={!user ? <Login /> : <Navigate to='/weather' />} />
             <Route path='/about' element={<About />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={!user ? <Register /> : <Navigate to='/weather' />} />
+            <Route path='/login' element={!user ? <Login /> : <Navigate to='/weather' />} />
+            <Route path='/weather' element={user ? <Weather /> : <Navigate to='/login' />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

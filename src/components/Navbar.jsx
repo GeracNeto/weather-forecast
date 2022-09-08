@@ -9,24 +9,34 @@ import logo from '../assets/images/logo.png'
 
 // Context
 import { useAuthValue } from '../context/AuthContext'
+import Search from './Search'
+import { useAuthentication } from '../hooks/useAuthentication'
 
 const Navbar = () => {
 
     const { user } = useAuthValue()
 
+    const { logout } = useAuthentication()
+
     return (
-        <div className="navbar">
-            <nav>
-                <Link to='/'><img src={logo} alt="logo-home" /></Link>
-                {!user && (
+        <nav className='navbar'>
+            <Link to='/'><img src={logo} alt="logo-home" /></Link>
+            <div className='navigation'>
+                {user ? (
+                    <Search />
+                ) : (
                     <>
                         <Link to='/login'>Login</Link>
                         <Link to='/register'>Register</Link>
                     </>
                 )}
                 <Link to='/about'>About</Link>
-            </nav>
-        </div>
+                {user && (
+                    <button onClick={logout}>Logout</button>
+                )}
+            </div>
+
+        </nav>
     )
 }
 

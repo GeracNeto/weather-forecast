@@ -1,20 +1,26 @@
 .navbar {
-    background-color: transparent;
-    width: 50%;
-
-    padding: 5px 20px;
-}
-
-.navbar nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 35px 60px;
+
+    background: transparent;
+
+    height: 5vh;
+
+    font-size: 1.1em;
 }
 
-.navbar a {
-    font-size: 1.2em;
+.navigation {
+    display: flex;
+    align-items: center;
+
+    gap: 3em;
+
+    list-style: none;
 }
 
-.navbar img {
-    width: 90px;
+.navbar img{
+    width: 80px;
 }
