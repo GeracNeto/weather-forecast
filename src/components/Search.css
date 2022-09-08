@@ -11,12 +11,14 @@
 }
 
 .search img:active{
-
-    transform: scale(1);
     transform: scale(0.5);
     transition: ease-in-out 50ms
 }
 
 .search img{
     width: 40px;
+}
+
+.search p{
+    font-weight: bold;
 }
