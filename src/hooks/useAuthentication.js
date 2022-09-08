@@ -70,11 +70,45 @@ export const useAuthentication = () => {
         signOut(auth)
     }
 
+    // Login - sign in
+    const login = async (data) => {
+
+        checkIfIsCancelled()
+
+        setLoading(true)
+        setError(false)
+
+        try {
+            
+            await signInWithEmailAndPassword(auth, data.email, data.password)
+
+            setLoading(false)
+
+        } catch (error) {
+
+            let systemErrorMessage
+
+            if (error.message.includes("user-not-found")) {
+                systemErrorMessage = "User not found"
+            }
+            else if (error.message.includes('wrong-password')) {
+                systemErrorMessage = 'Wrong password'
+            }
+            else {
+                systemErrorMessage = "Something went wrong...try again"
+            }
+
+            setError(systemErrorMessage)
+
+            setLoading(false)
+        }
+    }
+
     // cleanUp - deal with memory leak
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
 
-    return { auth, createUser, error, loading, logout }
+    return { auth, createUser, error, loading, logout, login }
 
 }
