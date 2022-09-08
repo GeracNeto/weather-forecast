@@ -1,5 +1,42 @@
-.weather{
-    background-color: rgba(44, 41, 41, 0.678);
+.weather {
+
+    background-image: radial-gradient(circle, rgba(11, 31, 56, 1), rgb(0, 0, 0, 0.5)), url('../../assets/images/sun.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     height: 100vh;
+    text-align: center;
+
+}
+
+.data {
+    max-width: 40%;
+    height: 60%;
+
+    border-radius: 50px;
+    margin: 1em auto;
+
+    box-shadow: 0px 0px 50px 31px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.data img {
+    width: 150px;
+}
+
+.data h1 {
+    font-size: 5em;
+    font-weight: 400;
+}
+
+.max-low,
+.another-data {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
