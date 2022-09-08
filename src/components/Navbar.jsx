@@ -20,7 +20,10 @@ const Navbar = () => {
 
     return (
         <nav className='navbar'>
-            <Link to='/'><img src={logo} alt="logo-home" /></Link>
+            <div>
+                <Link to='/'><img src={logo} alt="logo-home" /></Link>
+                {user && <h3>Welcome {user.displayName}<span>!</span></h3>}
+            </div>
             <div className='navigation'>
                 {user ? (
                     <Search />
