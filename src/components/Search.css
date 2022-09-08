@@ -1,0 +1,22 @@
+.search{
+    max-width: max-content;
+
+    display: flex;
+    align-items: center;
+    gap: 1.8em;
+}
+
+.search button{
+    background: none;
+}
+
+.search button:active{
+
+    transform: scale(1);
+    transform: scale(0.5);
+    transition: ease-in-out 50ms
+}
+
+.search img{
+    width: 40px;
+}
