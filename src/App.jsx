@@ -19,6 +19,7 @@ import { AuthProvider } from './context/AuthContext'
 // Hooks
 import { useAuthentication } from './hooks/useAuthentication'
 import { useEffect, useState } from 'react'
+import { CityContextProvider } from './context/CityContext'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="App">
       <AuthProvider value={{ user }}>
+        <CityContextProvider>
           <BrowserRouter>
             <Routes>
               <Route path='/' element={!user ? <Login /> : <Navigate to='/weather' />} />
@@ -49,6 +51,7 @@ function App() {
               <Route path='/weather' element={user ? <Weather /> : <Navigate to='/login' />} />
             </Routes>
           </BrowserRouter>
+        </CityContextProvider>
       </AuthProvider>
     </div>
   )
