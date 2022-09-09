@@ -1,22 +1,30 @@
 import './Search.css'
 
 import searchIcon from '../assets/images/search-location.png'
-import { useNavigate } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { CityContext } from '../context/CityContext'
+
 
 const Search = () => {
 
-    const navigate = useNavigate();
+    const [cityName, setCityName] = useState()
+
+    const {setCity} = useContext(CityContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // fazer GET dos dados e salvar em context
+        // Updates city on context
+        setCity(cityName)
+        setCityName('')
+        
+        // maybe naviagte('/weather) becasue if the search has been on about page
     }
 
     return (
         <form className='search' onSubmit={handleSubmit}>
             <p>City:</p>
-            <input type="text" />
+            <input type="text" value={cityName} onChange={e => setCityName(e.target.value)} />
             <button><img src={searchIcon} alt="search" /></button>
         </form>
     )
