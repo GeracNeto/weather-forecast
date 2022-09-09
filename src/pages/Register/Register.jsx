@@ -41,11 +41,12 @@ const Register = () => {
 
         // Creates user 
         const res = await createUser(user)
+        console.log(res)
 
         // Update firebase db with wmail and API key
         const addApiKeyFirebase = await addAPIKey(email, apiKey)
 
-        navigate('/') // arrumar isso
+        navigate('/') // Fazendo isso para carregar o nome no welcome ao registrar
     }
 
     // Updates error always authError updates
