@@ -2,24 +2,24 @@ import Navbar from '../../components/Navbar'
 import './Weather.css'
 
 import teste from '../../assets/images/rainy-day.png'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CityContext } from '../../context/CityContext'
 
 const Weather = () => {
 
     // get city name from context
-    const { city } = useContext(CityContext)
+    const { cityData, atmData } = useContext(CityContext)
 
     return (
         <div className='weather'>
             <Navbar />
             <h3 id='day'>
-                {city}
+                {cityData.name}
             </h3>
             <div className='data'>
                 <img src={teste} alt="teste" />
                 <p>Mostly Cloud</p>
-                <h1>22°</h1>
+                <h1>{atmData.temp}</h1>
                 <div className='max-low'>
                     <p>H: 24°</p>
                     <p>L: 7°</p>
