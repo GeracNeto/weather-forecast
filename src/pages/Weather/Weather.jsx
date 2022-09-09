@@ -2,18 +2,19 @@ import Navbar from '../../components/Navbar'
 import './Weather.css'
 
 import teste from '../../assets/images/rainy-day.png'
-import { useAuthValue } from '../../context/AuthContext'
-import { useEffect } from 'react'
+import { useContext } from 'react'
+import { CityContext } from '../../context/CityContext'
 
 const Weather = () => {
 
-    // get firebase here
+    // get city name from context
+    const { city } = useContext(CityContext)
 
     return (
         <div className='weather'>
             <Navbar />
             <h3 id='day'>
-                Thu, April 28
+                {city}
             </h3>
             <div className='data'>
                 <img src={teste} alt="teste" />
