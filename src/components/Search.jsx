@@ -7,15 +7,15 @@ import { CityContext } from '../context/CityContext'
 
 const Search = () => {
 
-    const [cityName, setCityName] = useState()
+    const [cityName, setCityName] = useState('')
 
-    const {setCity} = useContext(CityContext)
+    const {getCityData} = useContext(CityContext)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        // Updates city on context
-        setCity(cityName)
+        await getCityData(cityName)
+
         setCityName('')
         
         // maybe naviagte('/weather) becasue if the search has been on about page
