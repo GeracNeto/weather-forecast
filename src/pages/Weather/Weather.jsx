@@ -1,36 +1,40 @@
 import Navbar from '../../components/Navbar'
 import './Weather.css'
 
-import teste from '../../assets/images/rainy-day.png'
 import { useContext, useEffect, useState } from 'react'
 import { CityContext } from '../../context/CityContext'
 
 const Weather = () => {
 
     // get city name from context
-    const { cityData, atmData } = useContext(CityContext)
+    const { cityData, mainData, windData, date, description, icon, error } = useContext(CityContext)
 
     return (
         <div className='weather'>
             <Navbar />
             <h3 id='day'>
-                {cityData.name}
+                {date}
             </h3>
             <div className='data'>
-                <img src={teste} alt="teste" />
-                <p>Mostly Cloud</p>
-                <h1>{atmData.temp}</h1>
+                <h2 id='day'>
+                    {cityData.name}
+                </h2>
+                <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather-icon" />
+                <p>{description}</p>
+                <h1>{mainData.temp} °C</h1>
                 <div className='max-low'>
-                    <p>H: 24°</p>
-                    <p>L: 7°</p>
+                    <p>H: {mainData.temp_max} °C</p>
+                    <p>L: {mainData.temp_min} °C</p>
                 </div>
                 <div className='another-data'>
-                    <p>H: 24 %</p>
-                    <p>P: 1015 mbar</p>
-                    <p>W: 7 km/h</p>
+                    <p>H: {mainData.humidity} %</p>
+                    <p>P: {mainData.pressure} hPa</p>
+                    <p>W: {windData.speed} km/h</p>
                 </div>
-
             </div>
+            {error && (
+                <p className='error'>{error}</p>
+            )}
 
         </div>
     )
