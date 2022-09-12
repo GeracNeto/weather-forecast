@@ -1,6 +1,6 @@
 .weather {
 
-    background-image: radial-gradient(circle, rgba(11, 31, 56, 1), rgb(0, 0, 0, 0.5)), url('../../assets/images/sun.png');
+    background-image: radial-gradient(circle, rgba(11, 31, 56, 1), rgb(0, 0, 0, 0.5)), url('../../assets/images/sunBackground.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
