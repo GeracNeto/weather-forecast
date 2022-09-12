@@ -11,10 +11,12 @@ const Search = () => {
 
     const {getCityData} = useContext(CityContext)
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
-        await getCityData(cityName)
+        let cityNameLowerCase = cityName.toLowerCase()
+
+        getCityData(cityNameLowerCase)
 
         setCityName('')
         
