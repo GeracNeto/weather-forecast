@@ -8,15 +8,16 @@ const Weather = () => {
 
     // get city name from context
     const { cityData, mainData, windData, date, description, icon, error } = useContext(CityContext)
-
+    
     return (
         <div className='weather'>
             <Navbar />
             <h3 id='day'>
                 {date}
             </h3>
-            <div className='data'>
-                <h2 id='day'>
+            {icon ? (
+                <div className='data'>
+                <h2>
                     {cityData.name}
                 </h2>
                 <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather-icon" />
@@ -32,6 +33,11 @@ const Weather = () => {
                     <p>W: {windData.speed} km/h</p>
                 </div>
             </div>
+            ) : (
+                <div className='data'>
+                    <h2>Search a city to GET data ...</h2>
+                </div>
+            )}
             {error && (
                 <p className='error'>{error}</p>
             )}
