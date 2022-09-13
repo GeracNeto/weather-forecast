@@ -3,9 +3,12 @@ import './Search.css'
 import searchIcon from '../assets/images/search-location.png'
 import { useContext, useState } from 'react'
 import { CityContext } from '../context/CityContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const Search = () => {
+
+    const navigate = useNavigate()
 
     const [cityName, setCityName] = useState('')
 
@@ -20,7 +23,7 @@ const Search = () => {
 
         setCityName('')
         
-        // maybe naviagte('/weather) becasue if the search has been on about page
+        navigate('/weather')
     }
 
     return (

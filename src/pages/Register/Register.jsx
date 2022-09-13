@@ -6,6 +6,8 @@ import Home from "../Home/Home"
 
 const Register = () => {
 
+    const navigate = useNavigate()
+
     const { createUser, error: authError, loading } = useAuthentication()
     const { addAPIKey } = useAddAPIKey()
 
@@ -43,6 +45,8 @@ const Register = () => {
 
         // Update firebase db with wmail and API key
         const addApiKeyFirebase = await addAPIKey(email, apiKey)
+
+        navigate('/')
     }
 
     // Updates error always authError updates
