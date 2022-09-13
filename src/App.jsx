@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <AuthProvider value={{ user }}>
         <CityContextProvider>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <BrowserRouter>
             <Routes>
               <Route path='/' element={!user ? <Login /> : <Navigate to='/weather' />} />
               <Route path='/about' element={<About />} />
