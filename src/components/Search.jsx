@@ -1,10 +1,17 @@
+// CSS
 import './Search.css'
 
+// Icone
 import searchIcon from '../assets/images/search-location.png'
-import { useContext, useState } from 'react'
-import { CityContext } from '../context/CityContext'
-import { useNavigate } from 'react-router-dom'
 
+// Hooks
+import { useContext, useState } from 'react'
+
+// Context
+import { CityContext } from '../context/CityContext'
+
+// Libs
+import { useNavigate } from 'react-router-dom'
 
 const Search = () => {
 
@@ -12,7 +19,7 @@ const Search = () => {
 
     const [cityName, setCityName] = useState('')
 
-    const {getCityData} = useContext(CityContext)
+    const { getCityData } = useContext(CityContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -22,7 +29,7 @@ const Search = () => {
         getCityData(cityNameLowerCase)
 
         setCityName('')
-        
+
         navigate('/weather')
     }
 

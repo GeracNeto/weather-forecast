@@ -1,7 +1,12 @@
+// Hooks
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { useAddAPIKey } from "../../hooks/useAddAPIKey"
 import { useAuthentication } from "../../hooks/useAuthentication"
+
+// Libs
+import { useNavigate } from "react-router-dom"
+
+// Pages
 import Home from "../Home/Home"
 
 const Register = () => {

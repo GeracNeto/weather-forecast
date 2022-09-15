@@ -1,14 +1,18 @@
-import Navbar from '../../components/Navbar'
+// CSS
 import './Weather.css'
 
-import { useContext, useEffect, useState } from 'react'
+// Hooks
+import { useContext, useEffect } from 'react'
+
+// Context
 import { CityContext } from '../../context/CityContext'
+
+// Components
+import Navbar from '../../components/Navbar'
 
 const Weather = () => {
 
-    // get city name from context
-
-    const { cityData, mainData, windData, date, description, error, setError, icon, setIcon} = useContext(CityContext)
+    const { cityData, mainData, windData, date, description, error, setError, icon, setIcon } = useContext(CityContext)
 
     useEffect(() => {
         setIcon(null)

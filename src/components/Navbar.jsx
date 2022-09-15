@@ -9,8 +9,12 @@ import logo from '../assets/images/logo.png'
 
 // Context
 import { useAuthValue } from '../context/AuthContext'
-import Search from './Search'
+
+// Hooks
 import { useAuthentication } from '../hooks/useAuthentication'
+
+// Components
+import Search from './Search'
 
 const Navbar = () => {
 

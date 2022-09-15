@@ -1,10 +1,17 @@
+// This context provides the data of the city
+
+// Libs
 import axios from "axios";
-import { createContext, useState } from "react";
+
+// Hooks
+import { createContext, useState, useEffect } from "react";
 import { useConvertData } from "../hooks/useConvertData";
 
+// Firebase
 import { db } from "../firebase/config";
-import { useEffect } from "react";
 import { collection, doc, getDocs } from "firebase/firestore";
+
+// Context
 import { useAuthValue } from "./AuthContext";
 
 export const CityContext = createContext()
@@ -24,8 +31,7 @@ export const CityContextProvider = ({ children }) => {
     const [userKey, setUserKey] = useState('')
 
     const [error, setError] = useState(null)
-
-    // Resgatar API key do usuário no firestore e colocar na URL aqui
+    
     const userCollectionRef = collection(db, "weatherkey")
 
     useEffect(() => {

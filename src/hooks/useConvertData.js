@@ -1,3 +1,4 @@
+// This hooks convert UNIX date em 'normal' date
 
 export const useConvertData = () => {
 
@@ -5,12 +6,12 @@ export const useConvertData = () => {
 
         let date = new Date(unixDate * 1000)
 
-        let dayName = date.toLocaleDateString("en-US", {weekday: "short"})
-        let month = date.toLocaleString("en-US", {month: "long"})
-        let dayNumber = date.toLocaleDateString("en-US", {day: "numeric"})
-        
+        let dayName = date.toLocaleDateString("en-US", { weekday: "short" })
+        let month = date.toLocaleString("en-US", { month: "long" })
+        let dayNumber = date.toLocaleDateString("en-US", { day: "numeric" })
+
         return `${dayName},  ${month} ${dayNumber}`
     }
-    
+
     return { convertDate }
 }

@@ -1,3 +1,5 @@
+// This context provide the user
+
 import { createContext, useContext } from "react";
 
 const AuthContext = createContext()

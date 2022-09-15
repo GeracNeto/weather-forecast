@@ -1,6 +1,8 @@
 // CSS
-import Navbar from '../../components/Navbar'
 import './Home.css'
+
+// Components
+import Navbar from '../../components/Navbar'
 
 const Home = ({ children }) => {
     return (

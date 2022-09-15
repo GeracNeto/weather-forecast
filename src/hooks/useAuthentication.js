@@ -1,3 +1,5 @@
+// This hook creates, sig-in and sign-out a user on firebase
+
 import { app } from '../firebase/config'
 
 import {
@@ -79,7 +81,7 @@ export const useAuthentication = () => {
         setError(false)
 
         try {
-            
+
             await signInWithEmailAndPassword(auth, data.email, data.password)
 
             setLoading(false)

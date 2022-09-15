@@ -8,7 +8,7 @@
     height: 100vh;
 }
 
-#day{
+#day {
     text-align: center;
 }
 
@@ -43,7 +43,7 @@
     gap: 1em;
 }
 
-.forecast{
+.forecast {
     margin: auto auto;
     width: fit-content;
     display: flex;

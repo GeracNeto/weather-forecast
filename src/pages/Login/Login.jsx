@@ -1,5 +1,8 @@
+// Hooks
 import { useEffect, useState } from "react"
 import { useAuthentication } from "../../hooks/useAuthentication"
+
+// Pages
 import Home from "../Home/Home"
 
 const Login = () => {
@@ -23,7 +26,7 @@ const Login = () => {
 
     const res = await login(user)
     console.log(res)
-    
+
   }
 
   // Updates error always authError updates

@@ -1,4 +1,4 @@
-.search{
+.search {
     max-width: max-content;
 
     display: flex;
@@ -6,19 +6,19 @@
     gap: 1.8em;
 }
 
-.search button{
+.search button {
     background: none;
 }
 
-.search img:active{
+.search img:active {
     transform: scale(0.5);
     transition: ease-in-out 50ms
 }
 
-.search img{
+.search img {
     width: 40px;
 }
 
-.search p{
+.search p {
     font-weight: bold;
 }

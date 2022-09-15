@@ -15,11 +15,11 @@ import { onAuthStateChanged } from 'firebase/auth'
 
 // Context
 import { AuthProvider } from './context/AuthContext'
+import { CityContextProvider } from './context/CityContext'
 
 // Hooks
 import { useAuthentication } from './hooks/useAuthentication'
 import { useEffect, useState } from 'react'
-import { CityContextProvider } from './context/CityContext'
 
 function App() {
 
