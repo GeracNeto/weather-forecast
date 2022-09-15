@@ -4,7 +4,7 @@
 
 ### The project consists of a weather foreacst API requests based on React.js. All HTTP requests were made using the <a href="https://openweathermap.org/">OpenWeather API</a>
 
-## Take a look <a href="https://weather-forecast-geracneto.vercel.app/weather">Weather-Forecast</a> :mag:
+## Take a look <a href="https://weather-forecast-geracneto.vercel.app">Weather-Forecast</a> :mag:
 
 ### Instructions
 - On **Register** page to fill *API Key* it necessary to get an API KEY on <a href="https://openweathermap.org/">OpenWeather</a> site
