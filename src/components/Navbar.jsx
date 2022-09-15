@@ -22,7 +22,7 @@ const Navbar = () => {
         <nav className='navbar'>
             <div>
                 <Link to='/'><img src={logo} alt="logo-home" /></Link>
-                {user && <h3>Welcome {user.displayName}<span>!</span></h3>}
+                {user && <h3>Welcome <span>{user.displayName}</span>!</h3>}
             </div>
             <div className='navigation'>
                 {user ? (
