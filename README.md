@@ -1,6 +1,6 @@
 # Weather Forecast
 
-## Conuming API from <a src="https://openweathermap.org/">OpenWeather</a>
+## Consuming API from <a src="https://openweathermap.org/">OpenWeather</a>
 
 ### The project consists of a weather foreacst API requests based on React.js. All HTTP requests were made using the <a href="https://openweathermap.org/">OpenWeather API</a>
 
